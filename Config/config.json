@@ -2,8 +2,8 @@
     "name": "Maven",
     "slug": "Maven",
     "author": "Orphevs",
-    "version": "1.0.1",
-    "apiID": 0,
+    "version": "1.0.2",
+    "apiID": -1,
     "slider": true,
     "configurations": {
         "favicon_url": "",
@@ -34,9 +34,5 @@
         "theme-ranking": "true",
         "logo": false
     },
-    "supported": {
-        "eywek.shop": "^1.2.4",
-        "eywek.vote": "^2.0.7",
-        "phpierre.vote": "^1.4.3"
-    }
+    "supported": {}
 }
