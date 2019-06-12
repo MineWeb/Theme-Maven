@@ -4,7 +4,7 @@
     <?php if(!empty($search_news)) { ?>
     <?php foreach ($search_news as $k => $v) { ?>
     <div class="news-u container-theme">
-        <span class="date">Publié le <?= $Lang->date($news['News']['created']); ?></span>
+        <span class="date">Publié le <?= $v['News']['created'] ?></span>
         <h3><?= cut($v['News']['title'], 60, array('ellipsis' => '...', 'html' => true)) ?></h3>
         <p><?= $this->Text->truncate($v['News']['content'], 320, array('ellipsis' => '...', 'html' => true)) ?></p>
         <div class="news-actions">
