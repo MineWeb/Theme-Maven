@@ -31,10 +31,6 @@ if(isset($config['logo']) && $config['logo']) {
 
             <div class="col-md-4">
               <?= $this->element('form.input.upload.img', $form_input) ?>
-                <div class="form-group">
-                    <label><?= $Lang->get('THEME__FAVICON_URL') ?></label>
-                    <input type="text" class="form-control" name="favicon_url" value="<?= $config['favicon_url'] ?>">
-                </div>
             </div>
 
             <div class="col-md-8">
