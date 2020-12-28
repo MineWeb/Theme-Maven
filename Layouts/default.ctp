@@ -14,11 +14,14 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
     <meta name="author" content="Orphevs">
 
-    <title><?= $title_for_layout; ?> - <?= $website_name ?></title>
+    <title><?= $seo_config['title'] ?></title>
+    <link rel="icon" type="image/png" href="<?= $seo_config['favicon_url'] ?>"/>
+    <meta name="title" content="<?= $seo_config['title'] ?>">
+    <meta property="og:title" content="<?= $seo_config['title'] ?>">
+    <meta name="description" content="<?= $seo_config['description'] ?>">
+    <meta property="og:description" content="<?= $seo_config['description'] ?>">
 
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('modern-business.css') ?>
@@ -35,8 +38,8 @@
         $this->element('styles')
     ?>
     
-    <?php if(isset($theme_config['favicon_url']) && $theme_config['favicon_url']) { ?>
-        <link rel="icon" type="image/png" href="<?= $theme_config['favicon_url'] ?>" />
+    <?php if(isset($seo_config['favicon_url']) && $seo_config['favicon_url']) { ?>
+      <link rel="icon" type="image/png" href="<?= $seo_config['favicon_url'] ?>"/>
     <?php } else { ?>
         <link rel="icon" type="image/png" href="<?= $this->Html->url('/') . 'theme/' . $this->theme  ?>/img/favicon.png" />
     <?php } ?>
