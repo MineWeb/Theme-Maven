@@ -38,29 +38,23 @@
         <h3>Nos réseaux sociaux</h3>
         <ul>            
             <?php
-            if(!empty($skype_link)) {
-                echo '<a href="'.$skype_link.'" target="_blank"><li class="skype"><i class="fa fa-skype"></i></li></a>';
-            }
-            if(!empty($youtube_link)) {
-                echo '<a href="'.$youtube_link.'" target="_blank"><li class="youtube"><i class="fa fa-youtube"></i></li></a>';
-            }
-            if(!empty($twitter_link)) {
-                echo '<a href="'.$twitter_link.'" target="_blank"><li class="twitter"><i class="fa fa-twitter"></i></li></a>';
-            }
-            if(!empty($facebook_link)) {
-                echo '<a href="'.$facebook_link.'" target="_blank"><li class="facebook"><i class="fa fa-facebook-f"></i></li></a>';
-            }
-            ?>
-            
-            <?php
-            foreach ($findSocialButtons as $key => $value) {
-                echo '<a target="_blank" href="'.$value['SocialButton']['url'].'">';
-                if(!empty($value['SocialButton']['img'])) {
-                    echo '<img src="'.$value['SocialButton']['img'].'">';
+                foreach ($findSocialButtons as $key => $value) {
+                    echo '<a target="_blank" href="' . $value['SocialButton']['url'] . '"><li style="background-color:' . $value['SocialButton']['color'] . '";>';
+                    
+                    if(!empty($value['SocialButton']['extra'])) {
+                        if (strpos($value['SocialButton']['extra'], 'fa-')) {
+                            echo '<i class="' . $value['SocialButton']['extra'] . '"></i>';
+                        } else {
+                            echo '<img src="' . $value['SocialButton']['extra'] . '" alt="' . $Lang->get("SOCIAL__BUTTON_IMG_ALT") . $value['SocialButton']['title'] . '">';
+                        }
+                    }
+                    // Pour garder le style du thème on enlève
+                    // if (!empty($value['SocialButton']['title'])) {
+                    //     echo ' ' . $value['SocialButton']['title'];
+                    // }
+                    echo '</li></a>';
                 }
-                echo '</a>';
-            }
-            ?>
+            ?>    
         </ul>
     </div>
     <?php } ?>
